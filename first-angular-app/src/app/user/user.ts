@@ -1,5 +1,11 @@
 import { Component, computed, EventEmitter, Input, input, Output, output } from '@angular/core';
 
+type UserType = {
+  id: string;
+  avatar: string;
+  name: string;
+};
+
 @Component({
   imports: [],
   selector: 'app-user',
@@ -8,11 +14,7 @@ import { Component, computed, EventEmitter, Input, input, Output, output } from 
 })
 export class User {
   //input without signal
-  @Input({required: true}) user!: { 
-    id: string; 
-    avatar: string; 
-    name: string 
-  };
+  @Input({required: true}) user!: UserType;
 
   get imagePath() {
     return `assets/users/${this.user.avatar}`;
