@@ -1,10 +1,16 @@
 import { Component, computed, EventEmitter, Input, input, Output, output } from '@angular/core';
 
-type UserType = {
+// type UserType = {
+//   id: string;
+//   avatar: string;
+//   name: string;
+// };
+
+interface UserType {
   id: string;
   avatar: string;
   name: string;
-};
+}
 
 @Component({
   imports: [],
