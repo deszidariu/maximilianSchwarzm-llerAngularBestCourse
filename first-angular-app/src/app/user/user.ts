@@ -21,7 +21,7 @@ export class User {
   }
 
   //simple output
-  @Output() select = new EventEmitter();
+  @Output() select = new EventEmitter<string>();
 
   //output as function (is not a signal like input function)
   //select = output<string>();
