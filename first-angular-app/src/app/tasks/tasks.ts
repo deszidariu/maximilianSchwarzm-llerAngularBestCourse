@@ -7,5 +7,6 @@ import { Component, Input } from '@angular/core';
   templateUrl: './tasks.html',
 })
 export class Tasks {
-  @Input({required: true}) name!: string[];
+  //? means it might not be initialized but that is fine, i'm aware of that
+  @Input() name?: string;
 }
