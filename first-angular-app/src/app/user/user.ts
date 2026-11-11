@@ -8,16 +8,14 @@ import { Component, computed, EventEmitter, Input, input, Output, output } from 
 })
 export class User {
   //input without signal
-  @Input({required: true}) id!: string;
-  @Input({
-    required: true,
-  }) avatar!: string;
-  @Input({
-    required: true,
-  }) name!: string;
+  @Input({required: true}) user!: { 
+    id: string; 
+    avatar: string; 
+    name: string 
+  };
 
   get imagePath() {
-    return `assets/users/${this.avatar}`;
+    return `assets/users/${this.user.avatar}`;
   }
 
   //simple output
@@ -35,6 +33,6 @@ export class User {
   // });
 
   onSelectUser() {
-    this.select.emit(this.id);
+    this.select.emit(this.user.id);
   }
 }
