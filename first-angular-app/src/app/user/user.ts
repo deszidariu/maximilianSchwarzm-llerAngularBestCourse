@@ -1,0 +1,40 @@
+import { Component, computed, EventEmitter, Input, input, Output, output } from '@angular/core';
+
+@Component({
+  imports: [],
+  selector: 'app-user',
+  styleUrl: './user.css',
+  templateUrl: './user.html',
+})
+export class User {
+  //input without signal
+  @Input({required: true}) id!: string;
+  @Input({
+    required: true,
+  }) avatar!: string;
+  @Input({
+    required: true,
+  }) name!: string;
+
+  get imagePath() {
+    return `assets/users/${this.avatar}`;
+  }
+
+  //simple output
+  @Output() select = new EventEmitter();
+
+  //output as function (is not a signal like input function)
+  //select = output<string>();
+
+  //inputs with signals
+  // avatar = input.required<string>();//inputs with signals
+  // name = input.required<string>();
+
+  // imagePath = computed(() => {
+  //   return `assets/users/${this.avatar()}`;
+  // });
+
+  onSelectUser() {
+    this.select.emit(this.id);
+  }
+}

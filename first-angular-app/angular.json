@@ -3,7 +3,7 @@
   "version": 1,
   "cli": {
     "packageManager": "npm",
-    "analytics": "6ee20891-5c6c-4b39-8a00-3c9cd47924e3"
+    "analytics": "54218228-3cc8-43c8-9083-32dc041c26ab"
   },
   "newProjectRoot": "projects",
   "projects": {
@@ -20,6 +20,8 @@
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": [
+              "src/favicon.ico",
+              "src/assets",
               {
                 "glob": "**/*",
                 "input": "public"
