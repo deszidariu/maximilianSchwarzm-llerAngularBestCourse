@@ -1,4 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+
+interface TaskModel {
+  id: string;
+  userId: string;
+  title: string;
+  summary: string;
+  dueDate: string;
+}
 
 @Component({
   imports: [],
@@ -6,4 +14,6 @@ import { Component } from '@angular/core';
   styleUrl: './task.css',
   templateUrl: './task.html',
 })
-export class Task {}
+export class Task {
+  @Input({required: true}) task!: TaskModel;
+}
