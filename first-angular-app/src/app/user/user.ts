@@ -8,6 +8,7 @@ import { type UserType } from './user.model';
   templateUrl: './user.html',
 })
 export class User {
+  @Input({required: true}) selected!: boolean;
   //input without signal
   @Input({required: true}) user!: UserType;
 
