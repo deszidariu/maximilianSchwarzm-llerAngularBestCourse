@@ -1,12 +1,5 @@
 import { Component, Input } from '@angular/core';
-
-interface TaskModel {
-  id: string;
-  userId: string;
-  title: string;
-  summary: string;
-  dueDate: string;
-}
+import { type TaskModel } from './task.model';
 
 @Component({
   imports: [],
